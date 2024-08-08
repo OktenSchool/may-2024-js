@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+- є змінна х, яка може прийняти будь-яке значення (стрінг, число, undefined, null і тд включно). Напишіть код який,
+буде присвоювати змінній х значення "default"
+якщо ви намагаєтесь присвоїти в неї falsy-значення (хибноподібні, тобто ті, які приводиться до false, а це 0 null undefined і тд).
+
+<script>
+
+    prompt('');
+    let x = null
+
+    if (true) {
+        console.log('IF');
+    } else {
+        console.log('else');
+    }
+
+    let manga1 = {
+        title: 'Itachi\'s story',
+        pageCount: 165,
+        genre: 'shounen',
+        authors: [
+            {name: 'Masashi Kishimoto', age: 654}, {name: 'Masashi', age: 49,}
+        ]
+    };
+
+
+    let age = 100500;
+    let asd = {
+        author: [name = 'Erin Meyer', age = 25]
+    }
+
+    console.log(age);
+
+
+    // let x = false ? 5 : true ? 10 : 20;
+
+    // описати масив, в якому буде зберігатись інформація про температуру вранці, вдень і ввечері за термін в 7 днів. Як зробити цей масив - вам потрібно подумати. Нормальних варіантів опису - 2. Варіант, коли в вас буде одновимірний масив з 21 значенням вичключаємо одразу
+
+    let temps = [
+        {morninig: 123, afternoon: 123, evening: 123},
+        {morninig: 123, afternoon: 123, evening: 123},
+        {morninig: 123, afternoon: 123, evening: 123},
+        {morninig: 123, afternoon: 123, evening: 123},
+        {morninig: 123, afternoon: 123, evening: 123},
+        {morninig: 123, afternoon: 123, evening: 123},
+        {morninig: 123, afternoon: 123, evening: 123},
+    ];
+
+    let temps2 = [
+        [123, 123, 123],
+        [123, 123, 123],
+        [123, 123, 123],
+        [123, 123, 123],
+        [123, 123, 123],
+        [123, 123, 123]
+    ];
+
+
+    switch (x) {
+        case null:
+        case undefined:
+        case 0:
+        case '':
+            console.log('');
+        default:
+            console.log('')
+    }
+
+    //
+    // let x = -3;
+    //
+    // if (x !== 0) {
+    //     console.log('good')
+    // }else {
+    //     console.log('asjgdhgafdsh');
+    // }
+
+    let days = [[], [], [], [], [], [], []];
+    days[0][0] = 'morning = 20 during the day = 35, night = 14';
+    days[1][0] = 'morning = 21, during the day = 36, night = 16';
+    days[2][0] = 'morning = 22, during the day = 38, night = 13';
+
+
+    let coursesAndDurationArray = [
+        {title: 'JavaScript Complex', monthDuration: 5},
+        {title: 'Java Complex', monthDuration: 6},
+        {title: 'Python Complex', monthDuration: 6},
+        {title: 'QA Complex', monthDuration: 4},
+        {title: 'FullStack', monthDuration: 7},
+        {title: 'Frontend', monthDuration: 4}
+    ];
+
+    if (coursesAndDurationArray[0].monthDuration > 5) {
+        console.log('super');
+    }
+
+    if (coursesAndDurationArray[1].monthDuration > 5) {
+        console.log('super');
+    }
+
+    if (coursesAndDurationArray[2].monthDuration > 5) {
+        console.log('super');
+    }
+
+    if (coursesAndDurationArray[3].monthDuration > 5) {
+        console.log('super');
+    }
+
+    if (coursesAndDurationArray[4].monthDuration > 5) {
+        console.log('super');
+    }
+
+    if (coursesAndDurationArray[5].monthDuration > 5) {
+        console.log('super');
+    }
+
+</script>
+
+</body>
+</html>
