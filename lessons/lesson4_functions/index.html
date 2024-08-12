@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+<script>
+
+    // s = a*b
+    // 200 = 10*20
+
+    // function square(sideA, sideB) {
+    //     if (sideB > 0 && sideA > 0) {
+    //         return sideA * sideB * coef;
+    //     }
+    //     return 0;
+    // }
+    //
+    // // debugger;
+    // let result = square(-10, 30);
+    // console.log(result);
+    //
+    // let res2 = square(4, 87);
+    // console.log(res2);
+
+
+    // let arrA = [1, 2, 3, 4];
+    // let arrB = [11, 22, 33];
+    // let arrC = [111, 222, 333];
+    //
+    //
+    // function arrayPrinter(arr) {
+    //     for (const arrElement of arr) {
+    //         console.log(arrElement);
+    //     }
+    // }
+    //
+    // arrayPrinter(arrA);
+    // arrayPrinter(arrB);
+    // arrayPrinter(arrC);
+
+
+    let arr = [];
+
+
+    let brr = []
+
+
+    addObjToConcreteArray({id: 1}, arr);
+    addObjToConcreteArray({id: 2}, brr);
+    // debugger;
+    addObjToConcreteArray({id: 2, name: 'kokos'}, []);
+
+    console.log(arr);
+    console.log(brr);
+
+    function addObjToConcreteArray(obj, array) {
+        // if (array) {
+        array[array.length] = obj;
+        // }
+    }
+
+
+    // function printToDocument(msg, tag) {
+    //     document.write(`<${tag}>${msg}</${tag}>`);
+    //     console.log(arguments);
+    // }
+    //
+    // printToDocument('pryvit', 'div');
+    // printToDocument('olla', 'h1');
+    // printToDocument('aloha', 'span');
+    // printToDocument('hello', 'p');
+
+
+    // function foobar() {
+    //     if (arguments.length === 2) {
+    //         return arguments[0] + arguments[1];
+    //     }
+    //     if (arguments.length === 3) {
+    //
+    //         return arguments[0] + arguments[1] - arguments[2];
+    //     }
+    // }
+    //
+    // console.log(foobar(11, 22, 17, 10500));
+
+
+    // rest arg
+    function barfoo(x, ...asd) {
+        console.log(asd);
+    }
+
+    barfoo(1, 2, 3, 4, 5, 6);
+    //
+
+    
+    // function countChecks(nums) {
+    //
+    // }
+    //
+    // countChecks([100, 200, 121, 11, 324, 567]);
+
+</script>
+
+</body>
+</html>
