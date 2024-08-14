@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    // function calculator(a, b) {
+    //     return a + b;
+    // }
+
+    // function expression no hoisting
+    // const calculator = function (a, b) {
+    //     console.log(arguments);
+    //     return a + b;
+    // }
+    // console.log(calculator(10, 20));
+
+
+    // arrow function  no hoisting + no arguments
+    // const calculator = (a, b) => {
+    //     // console.log(arguments);
+    //     return a + b;
+    // }
+    // console.log(calculator(10, 20));
+
+
+    // const calculator = (a, b) => a + b;
+    // console.log(calculator(10, 20));
+
+
+    // let user = {
+    //     id: 12321,
+    //     name: 'vasya',
+    //     greeting1: function (msg) {
+    //         console.log('hello1', msg, this.name);
+    //         // this - ваш об'єкт з яким ви працюєте в якому оголошена функція
+    //     },
+    //     greeting2(msg) {
+    //         console.log('hello2', msg, this.name);
+    //         // this - ваш об'єкт з яким ви працюєте в якому оголошена функція
+    //
+    //     },
+    //     greeting3: (msg) => {
+    //         console.log('hello3', msg, this.name);
+    //     //     this - це глобальний об'єк window
+    //     }
+    //
+    // }
+    //
+    // user.greeting1('you');
+    // user.greeting2('me');
+    // user.greeting3('us');
+
+    // function userBuilder(id, name) {
+    //     let user = {
+    //         id,
+    //         name,
+    //     };
+    //
+    //     return {
+    //         getId: () => {
+    //             console.log(user.id);
+    //         },
+    //         getName() {
+    //             console.log(user.name);
+    //         },
+    //         setId(id) {
+    //             if (id > 0) {
+    //                 user.id = id;
+    //
+    //             }
+    //         },
+    //         setName(name) {
+    //             if (name) {
+    //                 user.name = name
+    //             }
+    //         },
+    //         getObjCopy() {
+    //
+    //             return {
+    //                 id: user.id,
+    //                 name: user.name,
+    //
+    //             };
+    //
+    //         },
+    //     };
+    // }
+    //
+    // let manipulatorOverUser1 = userBuilder(1, 'kokos');
+    // // let manipulatorOverUser2 = userBuilder(2, 'abriokos');
+    //
+    // manipulatorOverUser1.getId();
+    // manipulatorOverUser1.getName();
+    //
+    // manipulatorOverUser1.setId(100);
+    //
+    // manipulatorOverUser1.getId();
+    //
+    // manipulatorOverUser1.setName('abriokos')
+    // manipulatorOverUser1.getName();
+    //
+    // let userCopy = manipulatorOverUser1.getObjCopy();
+    // console.log(userCopy);
+
+    // let arr = [
+    //     11, 22, 33, [44, 55], [66, 77, [111, [12, 123, 123], 222]]]; // [11,22,33,44,55...]
+    //
+    //
+    // let innerArray = [];
+    //
+    // function flatter(array) {
+    //     for (const item of array) {
+    //         if (Array.isArray(item)) {
+    //             flatter(item);
+    //         } else {
+    //             innerArray.push(item);
+    //         }
+    //     }
+    // }
+    //
+    // flatter(arr);
+    // console.log(innerArray);
+    //
+    //
+    // function iterator(arr, i) {
+    //     console.log(arr[i]);
+    //     i++;
+    //     if (i < arr.length) {
+    //         iterator(arr, i);
+    //     }
+    // }
+    //
+    // iterator(innerArray, 0);
+
+
+    // function* cardHolder() {
+    //     let cards = [
+    //         {value: 6, suite: 'diamond'},
+    //         {value: 7, suite: 'spade'},
+    //         {value: 8, suite: 'diamond'},
+    //         {value: 9, suite: 'spade'},
+    //     ]
+    //
+    //     for (const card of cards) {
+    //         yield card;
+    //     }
+    //
+    // }
+    //
+    // let holder = cardHolder();
+    //
+    // console.log(holder.next());
+    // console.log(holder.next());
+    // console.log(holder.next());
+    // console.log(holder.next());
+    // console.log(holder.next());
+
+
+    try {
+        console.log(a);
+    } catch (e) {
+        console.log(e);
+    }
+    console.log('aasdsad');
+
+    function asd(a, b) {
+        if (b === 0) {
+            throw new Error('kasgdjhagsj')
+        }
+        //....
+    }
+
+    try {
+        asd(100, 0);
+    } catch (e) {
+
+    }
+
+</script>
+
+</body>
+</html>
