@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<!--<button onclick="asd('one')">one-->
+<!--</button>-->
+<!--<br>-->
+<!--<button onclick="asd('two')">two-->
+<!--</button>-->
+<!--<br>-->
+
+
+<form id='xxx' name="f1" onsubmit="(function (x){
+    console.log(x);
+}())">
+    <input type="text" name="username">
+    <input type="number" min="0" max="123" name="age">
+    <button>send</button>
+</form>
+
+<form name="f2">
+    <input type="text" name="username">
+    <input type="number" min="0" max="123" name="age">
+    <button>send</button>
+</form>
+
+<script>
+    function onsubmit(eventObject) {
+        eventObject.preventDefault();
+        let username = this.username.value;
+        let age = this.age.value;
+        let obj = {
+            username: username,
+            age: age
+        }
+        console.log(obj);
+    };
+
+    let forms = document.forms;
+    console.log(forms);
+
+    let f1 = forms[0];
+    console.log(f1);
+    let f2 = forms[1];
+    console.log(f2);
+
+    // f1.onsubmit = onsubmit
+
+    // f2.onsubmit = onsubmit;
+
+
+    // const asd = (array) => {
+    //     for (let item of array) {
+    //         item = item + 1;
+    //         item = item + '';
+    //         console.log(item);
+    //     }
+    //
+    // }
+
+    //     let list = (js) => document.write(` <ul> <li>${js}</li> <li>${js}</li> <li>${js}</li> </ul>
+    // `);
+    //
+    //
+    //     let listItem = (js, numberOfItems) => {
+    //         document.write('<ul>');
+    //         for (let i = 0; i < numberOfItems; i++) {
+    //             document.write(`<li>${js}</li>`);
+    //         }
+    //         document.write('</ul>');
+    //     };
+
+
+</script>
+
+</body>
+</html>
