@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // let arr = [];
+    // console.log(Array.isArray(arr)); // true
+    // arr.push('asdhasgf1');
+    // arr.push('asdhasgf2');
+    // let number = arr.push('asdhasgf3');
+    // console.log(arr);
+    // console.log(number);
+    //
+    // let pop = arr.pop();
+    // console.log(arr);
+    // console.log(pop);
+    //
+    // arr.unshift('qweqwe');// new lehgth
+    // console.log(arr);
+    // // arr.shift() // deleted obj
+    //
+    // console.log(arr);
+    // let s = arr.join();
+    // console.log(s);
+    //
+    // let arr2 = [11, 22, 33];
+    //
+    // let concatedArray = arr.concat(arr2);
+    // console.log(arr);
+    // console.log(arr2);
+    // console.log(concatedArray);
+    //
+    // let reverse = concatedArray.reverse();
+    //
+    // console.log(concatedArray);
+    // console.log(reverse);
+    // console.log(reverse === concatedArray);
+    //
+    //
+    // console.log(concatedArray.slice(1, 3));
+    // console.log(concatedArray);
+    //
+    // // let removedItems
+    // //     = concatedArray.splice(2, 1,111);
+    // // console.log(concatedArray);
+    // // console.log(removedItems);
+    //
+    // console.log(concatedArray);
+    //
+    // console.log(concatedArray.indexOf(33));
+    // console.log(concatedArray.indexOf(3, 33));
+    // console.log(concatedArray.includes(222));
+
+
+    let users = [
+        {name: 'vasya', age: 31, status: false},
+        {name: 'petya', age: 30, status: true},
+        {name: 'kolya', age: 29, status: true},
+        {name: 'olya', age: 28, status: false},
+        {name: 'max', age: 30, status: true},
+        {name: 'anya', age: 31, status: false},
+        {name: 'oleg', age: 28, status: false},
+        {name: 'andrey', age: 29, status: true},
+        {name: 'masha', age: 30, status: true},
+        {name: 'olya', age: 31, status: false},
+        {name: 'max', age: 31, status: true}
+    ];
+
+
+    // users.forEach(function (user) {
+    //     console.log(user);
+    // });
+
+    // let resultFilterArray = users.filter(user => user.age > 30);
+    // console.log(resultFilterArray);
+    // console.log(resultFilterArray === users);
+
+    let mapResultArray = users.map((user, index) => {
+        let obj = {
+            id: index + 1,
+            name: user.name,
+            age: user.age,
+            status: user.status
+        }
+
+        return obj;
+    });
+
+    //
+    // let mapResultArray = users.map((user, index) => {
+    //     let obj = JSON.parse(JSON.stringify(user));
+    //     obj.id = index + 1
+    //     return obj;
+    // });
+
+
+    // let mapResultArray = users.map((user, index) => ({...user, id: index + 1}));
+    // console.log(mapResultArray === users);
+    // console.log(users);
+    // console.log(mapResultArray);
+
+    // let toSorted =
+    //     users.toSorted((user1, user2) => user1.name.localeCompare(user2.name));
+    // console.log(users);
+    // console.log(toSorted);
+
+
+    // let reduce = users.reduce((accumulator, user) => {
+    //     if (user.status) {
+    //         accumulator[0].push(user);
+    //     } else {
+    //         accumulator[1].push(user);
+    //     }
+    //     return accumulator;
+    //
+    // }, [[], []]);
+    // console.log(reduce);
+
+    // let reduce = users.reduce((accumulator, user) => {
+    //     accumulator += user.age;
+    //     return accumulator;
+    // }, 0);
+    // console.log(reduce);
+
+
+    function calcualtor(aNum, bNum, actionFn) {
+        actionFn(aNum, bNum);
+    }
+
+    calcualtor(10, 20, (a, b) => console.log((a + b) / 2))
+
+
+</script>
+
+</body>
+</html>
