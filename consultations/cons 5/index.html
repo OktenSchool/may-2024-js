@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    // "Чи можна виконати це завдання н роблячи на кожну фразу зміну і звртаючись до кожної змінної?
+    // "" Перевести до великого регістру наступні стрінгові значення
+    // 'hello world', 'lorem ipsum', 'javascript is cool'""
+    // Може можна, якось через  масив та цикл?"
+
+    let strings = ['hello world', 'lorem ipsum', 'javascript is cool'];
+
+    // for (const s of strings) {
+    //     console.log(s.toUpperCase());
+    // }
+
+    // let upperCaseStrings = [];
+    //
+    // for (const s of strings) {
+    //     upperCaseStrings.push(s.toUpperCase())
+    // }
+    // console.log(upperCaseStrings);
+
+    // let map = strings.map(value => value.toUpperCase());
+    // console.log(map);
+
+    // let sObj = {};
+    //
+    // for (let i = 0; i < strings.length; i++) {
+    //     sObj[i] = strings[i];
+    // }
+    // console.log(sObj);
+
+
+    let result = 'name-vasya;age-23;gender-male'
+        .split(';') // []
+        .map(value => value.split('-'))
+        .reduce((accumulator, arrayOfTuples) => {
+            accumulator[arrayOfTuples[0]] = arrayOfTuples[1];
+            return accumulator;
+        }, {});
+
+    // .reduce((accumulator, arrayOfTuples) => ({...accumulator, [arrayOfTuples[0]]: arrayOfTuples[1]}), {});
+
+
+    console.log(result);
+
+
+</script>
+
+</body>
+</html>
