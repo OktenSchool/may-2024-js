@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    // function userFactoryFunction(id, name) {
+    //     return {
+    //         id, name
+    //     }
+    // }
+    //
+    // function clientFactoryFunction(id, name, password) {
+    //     return {
+    //         id, name, password
+    //     }
+    // }
+    //
+    // let userFactoryObject = userFactoryFunction(1, 'kokos');
+    // let client = clientFactoryFunction(1, 'asdasd', 'qwqwewqe');
+    //
+    //
+    // console.log(userFactoryObject);
+    // console.log(client);
+    //
+    //
+    // function User(id, name) {
+    //     // this = {}
+    //     this.id = id;
+    //     this.name = name;
+    //     this.greeting = function (msg) {
+    //         console.log(msg + ' my name is ' + this.name);
+    //     };
+    //
+    // }
+    //
+    //
+    // User.prototype.asdqwe = 1003000;
+    // User.prototype.foobar = function () {
+    //     console.log('barfoo');
+    // };
+    //
+    // let user1 = new User(1, 'asdqwezxc');
+    // console.log(user1 instanceof User);
+    //
+    // console.log(user1);
+    // console.log({});
+    //
+    //
+    // let numbers = [11, 22, 33];
+    // console.log(numbers instanceof Array);
+    // Array.prototype.xxx = function () {
+    //     console.log(this);
+    // };
+    //
+    // numbers.xxx();
+    //
+    // let users = [
+    //     {name: 'vasya', age: 31, status: false},
+    //     {name: 'petya', age: 30, status: true},
+    //     {name: 'kolya', age: 29, status: true},
+    //     {name: 'olya', age: 28, status: false},
+    //     {name: 'max', age: 30, status: true},
+    //     {name: 'anya', age: 31, status: false},
+    //     {name: 'oleg', age: 28, status: false},
+    //     {name: 'andrey', age: 29, status: true},
+    //     {name: 'masha', age: 30, status: true},
+    //     {name: 'olya', age: 31, status: false},
+    //     {name: 'max', age: 31, status: true}
+    // ];
+    //
+    // users.xxx();
+    //
+    //
+    // user1.greeting.call(userFactoryObject, 'olla');
+    // user1.greeting.apply(userFactoryObject, ['aloha']);
+    //
+    // let greetingClone = user1.greeting.bind(userFactoryObject);
+    //
+    // greetingClone('asdqyweytw');
+    //
+    //
+    // function SuperUser(id, name, login, password) {
+    //     User.apply(this, [id, name]);
+    //     this.login = login;
+    //     this.passowrd = password;
+    // }
+    //
+    // let superUser = new SuperUser(111, 'asdads', 'lofin', 'oaisuqweiug');
+    // console.log(superUser);
+
+
+    // class User {
+    //
+    //     constructor(id, name) {
+    //         this.id = id;
+    //         this.name = name;
+    //
+    //     }
+    //
+    //     greeting(msg) {
+    //         console.log(msg, 'my name is ', this.name);
+    //     }
+    //
+    // }
+    //
+    //
+    // let user = new User(1, 'aasda');
+    // console.log(user);
+    //
+    // class SuperUser extends User {
+    //     constructor(id, name, login, password) {
+    //         super(id, name);
+    //         this.login = login;
+    //         this.password = password;
+    //     }
+    //
+    //     foobar() {}
+    // }
+    //
+    // let superUser = new SuperUser(1111, 'pppp', 'lodskf', 'pasdqiuwegu');
+    // console.log(superUser);
+    // superUser.greeting('zazaza');
+
+
+    // let date = new Date();
+    // console.log(date);
+    // console.log(date.getTime());
+
+    // let set = new Set();
+    // set.add('asd');
+    // set.add('qwe');
+    // set.add('zxc');
+    // set.add('zxc');
+    //
+    // let value = {};
+    //
+    // set.add(value);
+    // set.add(value);
+    // set.add({});
+    // set.add([]);
+    // set.add([]);
+    // console.log(set);
+    // console.log({} === {});
+    // console.log(set.has(value));
+    // let entries = set.entries();
+    // // console.log(entries.next());
+    // // console.log(entries.next());
+
+
+    let map = new Map();
+    map.set('doctor', {name: 'roman'});
+    map.set('petya', {name: 'sasha'});
+    map.set('borya', {name: 'sasha'});
+
+    console.log(map);
+
+    let entries = map.entries();
+    console.log(entries.next());
+    console.log(entries.next());
+    console.log(entries.next());
+
+    console.log(map.get('borya'));
+
+    map.delete('doctor');
+    console.log(map);
+
+
+
+</script>
+
+</body>
+</html>
