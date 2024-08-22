@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+
+    // let obj = {}
+    // console.log(obj.embd?.foo());
+    function dest({id, foo}) {
+        console.log(id);
+        console.log(foo);
+    }
+
+    dest({id: 1, foo() {console.log(this);},});
+
+    // let numbers = [11, 22, 33, 44];
+    // let a = numbers[0];
+    // let b = numbers[1];
+    // let c = numbers[2];
+    let [a, b, , c] = [11, 22, 33, 44];
+    console.log(a, b, c);
+
+    let users = [
+        {name: 'vasya', age: 31, status: false},
+        {name: 'petya', age: 30, status: true},
+        {name: 'kolya', age: 29, status: true},
+        {name: 'olya', age: 28, status: false},
+        {name: 'max', age: 30, status: true},
+        {name: 'anya', age: 31, status: false},
+        {name: 'oleg', age: 28, status: false},
+        {name: 'andrey', age: 29, status: true},
+        {name: 'masha', age: 30, status: true},
+        {name: 'olya', age: 31, status: false},
+        {name: 'max', age: 31, status: true}
+    ];
+
+    let [{status}] = users;
+    console.log(status);
+
+
+    let user = {
+        wife: {name: 'anna'},
+        name: 'vasya',
+        age: 31,
+        status: false
+    };
+
+    // let {wife: drujyna, wife: {name}} = user;
+    // console.log(name);
+    // console.log(drujyna);
+    // let [, , arr] = [11, 22, [333, 444]];
+    // console.log(arr);
+    // let [aa, bb] = arr;
+
+    // let newUser = {wife: user.wife, name: user.name, age: user.age, status: user.status};
+    let newUser = {...user, name: 'saduasgdfhsa'};
+    console.log(user);
+    console.log(newUser);
+    console.log(newUser === user); // false
+    console.log(newUser.wife === user.wife); // true
+
+
+    // let user = '{"wife": {"name": "anna"}, "name": "vasya", "age": 31, "status": false}'; // JSON
+
+
+    let array = [11, 22, 33];
+    let newArray = [44, 55, ...array];
+
+
+    let json = JSON.stringify(user);
+    console.log(json);
+    let parse = JSON.parse(json);
+    console.log(parse);
+    console.log(parse === user);
+
+
+    let userObj = Object.create(user);
+    console.log(userObj);
+    console.log(userObj.name);
+
+    userObj.name = 'kokos';
+    console.log(userObj.hasOwnProperty('name')); // true
+    console.log(userObj.name);
+    console.log(userObj);
+    console.log(userObj.__proto__.name);
+    console.log(userObj);
+    console.log(user);
+
+    Object.defineProperty(user, 'id', {
+        value: 100500,
+        writable: false,
+        configurable: true,
+        enumerable: false
+
+    });
+    user.id = 100600; //????!!!! 100500
+
+
+    console.log(user);
+
+    for (const userKey in user) {
+        console.log(userKey);
+    }
+
+
+    Object.defineProperty(user, 'id', {
+        value: 123123123,
+        writable: false,
+        configurable: true,
+        enumerable: false
+
+    });
+
+
+    console.log();
+    Object.defineProperties(user, {
+        'id': {value: 'qweqwe', writable: true, configurable: false, enumerable: true},
+        'name': {value: 'qweqwe', writable: true, configurable: false, enumerable: true},
+        'age': {value: 'qweqwe', writable: true, configurable: false, enumerable: true},
+        'status': {value: 'qweqwe', writable: true, configurable: false, enumerable: true},
+    });
+
+    console.log(user);
+
+
+</script>
+
+</body>
+</html>
