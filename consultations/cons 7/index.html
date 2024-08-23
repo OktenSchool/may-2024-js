@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // "Питання по домашці 8 (учорашня 1 завдання). Щоб зробити завдання, я створив клас Car  з функціями.
+    // Додав об’єкт. Все працює.
+    // Далі, щоб скопіювати його функції, я створив массив, куди відібрав всі функції зі створеного об’єкту (const allFunction = [car.enterNewModel, car.uppercaseToAll,car.message ]);
+    //     .
+    //     Після цього зробив глибоку копію за допомогою JSON.stringify та JSON.parse.
+    //     Далі я зробив деструктуризацію массива, в якому заздалегіть виніс функції.
+    //     Далі вирішив спробувати об’єднати новий скопійований глибокою копією массив parseNewMassivCar з деструтурованними об’єктами через поверхневу копію spred.
+    //     Тобто у результаті отримав let lastMassivCar = {...parseNewMassivCar, funkcia1, funkcia2, funkcia3};.
+    //     Моє питання полягає у тому, що коли після усіх цих маніпуляцій я звертаюсь безпосередньо до функції enterNewModel, uppercaseToAll чи message, вони не відпрацьовують.
+    //     А ось, коли я роблю звернення через змінні, котрі були введенні при деструтуризацію массиву з функціями, вони відпрацьовують.
+    //     Тобто, наприклад lastMassivCar.uppercaseToAll(); не працює, пише, що він не функція(lastMassivCar.toUpperCase is not a function).
+    //     А ось lastMassivCar.funkcia2(); - виконує поставлену задачу. Чи можна зробити так, щоб перший варіант працював, щоб ми бачили, що знову використовується безпосередньо функція, яка була у першому об'єкті з функціями, тобто щоб працювала//console.log(lastMassivCar.toUpperCase()).
+    //
+    // class Car {
+    //     constructor(id, marka, model, year, rashod, maxSpeed) {
+    //         this.id = id;
+    //         this.marka = marka;
+    //         this.model = model;
+    //         this.year = year;
+    //         this.rashod = rashod;
+    //         this.maxSpeed = maxSpeed;
+    //     }
+    //
+    //
+    //     enterNewModel(changeModel) {
+    //         this.model = changeModel;
+    //     }
+    //
+    //     message() {
+    //         console.log(`Ми, як дурні, поїхали у гори на ${this.marka} ${this.model} `);
+    //     }
+    //
+    //     uppercaseToAll() {
+    //         this.marka = this.marka.toUpperCase();
+    //         this.model = this.model.toUpperCase();
+    //     }
+    // }
+    //
+    // const car = new Car(129, 'skoda', 'fabia', 2014, 6.5, 160);
+    // console.log(car);
+    //
+    // car.enterNewModel('felicia');
+    // car.uppercaseToAll();
+    // console.log(car)
+    //
+    // car.message();
+    //
+    // const allFunction = [car.enterNewModel, car.uppercaseToAll, car.message];
+    // let allFunctionElement0 = allFunction[0];
+    // allFunctionElement0.call(car,'OJHGFYF');
+    // console.log(car);
+    //
+    //
+    //
+    // console.log(car);
+    //
+    //
+    // let jsonCar = JSON.stringify(car);
+    // console.log(jsonCar);
+    //
+    //
+    // let parsedJsonCar = JSON.parse(jsonCar);
+    // console.log(parsedJsonCar);
+    //
+    //
+    // let [funkcia1, funkcia2, funkcia3] = allFunction;
+    // // console.log(funkcia1)
+    //
+    // let funkcia1JsonCarBind = funkcia1.bind(parsedJsonCar);
+    //
+    // let lastCar = {...parsedJsonCar, funkcia1JsonCarBind, funkcia2, funkcia3};
+    // console.log(lastCar);
+    //
+    // /////////////////////////////////Відпрацювання доданих функцій
+    // lastCar.funkcia1('octavia');
+    // console.log(lastCar);
+    //
+    // // console.log(lastMassivCar.toUpperCase())
+    // lastCar.funkcia2();
+    // console.log(lastCar);
+    //
+    // lastCar.funkcia3();
+    //
+    // let obj = {};
+    // Object.defineProperty(obj, 'id', {
+    //     value: 100500,
+    //     writable: false
+    // });
+    //
+    // console.log(obj);
+    // let json = JSON.stringify(obj);
+    // let parse = JSON.parse(json);
+    // console.log(parse);
+    // // debugger;
+    //
+    // parse.id = 100;
+    // console.log(parse);
+
+
+    // "Можливо я забігаю на перед,
+    // і ми це ще будемо проходити, але думаю краще запитаю.
+    // На одній із лекцій коли ми за допомогою функції витягували всі елементи з багатовимірного масиву і поміщали його в новий масив,
+    // тільки вже на одному рівні, ви говорили про метод flatMap.
+    // Я пробував за допомогою нього зробити те саме, але в мене вийшло витягти елементи тільки які знаходились на рівень вище в масиві (масив в масиві),
+    // а ті елементи що знаходяться ще вище, не витягує. Як зробити можна зробити?
+    //
+    // let arrayInArray = [11, 22, 33, [44, 55], [66, 77, [88, 99, [111, 222, 333]]], 100];
+    //
+    // let numbers = arrayInArray.flat(2);
+    // // console.log(numbers);
+
+
+    // "Сергій, чи могли б ви показати всі можливі і найактуальніші застосування комбінацій клавіш для програми. На відео вони пишуться, але не всі в мене виходить застосувати, деякі не працюють, можливо я неправильно щось роблю.
+    // Але навіть на даному етапі навчання дуже доречно використовувати ці комбінації клавіш. Наприклад часто потрібно одне слово написати одночасно в 10 стрічках коду як ви це робите, але не виходить з Ctrl + Down, і т д. Дуже дякую
+    // "
+
+
+    // // "Підкажіть будь ласка чи є можливість зробити деструктуризацію об'єкта,
+    // // якщо не знаєшь які там будуть передані характеристики?
+    // // Чи наприклад кожну характеристику требя витягнути.
+    //
+    // // А також чи можемо застосовувати деструктуризацію до массива з великою кількістю елементів і треба десь із середини дістати елемент.
+    //
+    // // Я вважаю, що можна за допомогою циклів та умов перевірити і ідентифікувати необхідну характеристику і іі витягнути як змінну, але можу помилятися.
+    //
+    // // Найбільш цікавить з масивами, мені здається буде не гарно проставити багато порожніх заглушок, щоб дістатися до потрібного елемента. Чи є варінти роботи з масивами за таких умов?"
+    //
+    // function foo() {
+    //     let obj1 = {secret: '%$^&TYJHBKJ'};
+    //     let obj2 = {public: 'FY^%R&G*r7rfuyf'};
+    //
+    //     // return {obj1,obj2}
+    //     return [obj1, obj2]
+    //
+    //
+    // }
+    //
+    // // let {obj1,obj2} = foo();
+    // let [a, b] = foo();
+    // console.log(a);
+
+
+    // "Підскажіть будь ласка де я помилилась.
+    // Я виводила користувачів зі статусом true and false в два пустих массіва,
+    // в консоле виведено  кількість однакових масивів рівних по довжні маисва з якого я його вивоила
+    // (length 11- true 6 and false 5).Що мені потрібно зробити ще,щоб я бачила тільки по одному масиву.
+    // https://drive.google.com/file/d/1VQ0wbuQwdy5Z5XUfAaqIb1za5tPZqAaW/view?usp=sharing
+    //     https://drive.google.com/file/d/1O0A8mpcxo_E-wSUCJ8HR34h2vPHctZKS/view?usp=sharing"
+
+
+    // "При глубокой копии обєкт ми получаемо копію обєкта(посилання)
+    // где его характеристики будут те же но це буде новий обєкт,
+    // при измененіі характерістік в новому (копії) обєкте,
+    // в первоначальном вони не змінюються.
+
+    // Дайте будь ласка приклад любой функціі яку я можу помістити в обєкт.
+    // obj.asd = function () {};
+    // https://drive.google.com/file/d/1rAvACKdUMME3xYLtJZpwPCd8manpNxAR/view?usp=sharing
+    //     https://drive.google.com/file/d/1hfjCerjD2yK8Wy1kB2qZZHqZWnnwdn0y/view?usp=sharing"
+
+    [].map(value => ({...value, id: 100500}));
+
+
+</script>
+
+</body>
+</html>
