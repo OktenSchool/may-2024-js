@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .target-1 {
+            width: 200px;
+            height: 200px;
+            background: #000;
+            transition: 1s;
+        }
+
+        .popup {
+            display: block;
+            width: 400px;
+            height: 400px;
+            position: fixed;
+            left: -999px;
+            top: -999px;
+            background: silver;
+            transition: 300ms;
+        }
+
+        .show {
+            display: block;
+            left: 300px;
+            top: 300px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="target-1"></div>
+
+<form name="form1">
+    <input type="text" name="username">
+    <input type="text" name="password">
+    <button>save</button>
+</form>
+
+<!--<div class="popup">-->
+<!--    hello-->
+<!--</div>-->
+<script>
+    // let target1 = document.getElementsByClassName('target-1')[0];
+    // console.log(target1);
+    // target1.onclick = function () {
+    //     console.log('click');
+    //     this.style.height = '400px';
+    //     this.style.color = '#fff';
+    // };
+    //
+    // target1.onmouseover = function () {
+    //
+    //     this.innerText = 'mouse over';
+    // };
+    // target1.onmouseleave = function () {
+    //     this.innerText = 'mouse leave';
+    // };
+    //
+    // target1.addEventListener('mouseleave', function () {
+    //     console.log('asdqwe');
+    // });
+
+    let form1 = document.forms.form1;
+
+    form1.addEventListener('submit', function (eventObject) {
+        eventObject.preventDefault();
+        let username = this.username.value;
+        let password = this.password.value;
+        let user = {username, password};
+        console.log(user);
+
+        let users = JSON.parse(localStorage.getItem('users')) || [];
+        users.push(user);
+
+        localStorage.setItem('users', JSON.stringify(users));
+
+    });
+
+    // let button = form1[2];
+    // console.log(button);
+    //
+    // button.onclick = function () {
+    //     document.getElementsByClassName('popup')[0].classList.toggle('show');
+    // };
+
+    // console.log(localStorage);
+    // localStorage.setItem('asd', 'qwe');
+    // localStorage.setItem('asd', 'asdasdas');
+
+    // console.log(localStorage.getItem('asd'));
+
+
+    // form1.username.oninput = function (e) {
+    //
+    //     console.log(e);
+    //
+    // };
+    // document.onmousemove = function (e) {
+    //     console.log(e.clientX, e.clientY);
+    // };
+
+    document.onkeydown = function (e) {
+        console.log(e);
+        if (e.key === 's') {
+            let audio = new Audio('sound.mp3');
+            audio.play();
+        }
+
+    };
+
+
+</script>
+</body>
+</html>
